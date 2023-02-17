@@ -104,6 +104,7 @@
     <Content Include="Content\css\styles.css" />
     <Content Include="Content\js\datatables-simple-demo.js" />
     <Content Include="Content\js\scripts.js" />
+    <Content Include="Content\Site.css" />
     <Content Include="CoursesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CoursesModel.Context.cs</LastGenOutput>
@@ -123,9 +124,14 @@
       <DependentUpon>CoursesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CourseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Instructor\InstructorAreaRegistration.cs" />
     <Compile Include="Category.cs">
       <DependentUpon>CoursesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Course.cs">
       <DependentUpon>CoursesModel.tt</DependentUpon>
@@ -151,6 +157,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\CourseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trainee.cs">
       <DependentUpon>CoursesModel.tt</DependentUpon>
@@ -171,7 +179,17 @@
     <Content Include="CoursesModel.edmx.diagram">
       <DependentUpon>CoursesModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Instructor\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Default\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\Index.cshtml" />
     <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -181,8 +199,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\Default\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Instructor\Controllers\" />
+    <Folder Include="Areas\Instructor\Data\" />
+    <Folder Include="Areas\Instructor\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
