@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CoursesApp
+namespace CoursesApp.Data
 {
     using System;
     using System.Data.Entity;

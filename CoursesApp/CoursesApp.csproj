@@ -96,31 +96,64 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Views\login.html" />
     <Content Include="Content\assets\demo\chart-area-demo.js" />
     <Content Include="Content\assets\demo\chart-bar-demo.js" />
     <Content Include="Content\assets\demo\chart-pie-demo.js" />
     <Content Include="Content\assets\demo\datatables-demo.js" />
     <Content Include="Content\assets\img\error-404-monochrome.svg" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\css\styles.css" />
     <Content Include="Content\js\datatables-simple-demo.js" />
     <Content Include="Content\js\scripts.js" />
     <Content Include="Content\Site.css" />
-    <Content Include="CoursesModel.Context.tt">
+    <Content Include="Data\CoursesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CoursesModel.Context.cs</LastGenOutput>
       <DependentUpon>CoursesModel.edmx</DependentUpon>
     </Content>
-    <Content Include="CoursesModel.tt">
+    <Content Include="Data\CoursesModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CoursesModel.edmx</DependentUpon>
       <LastGenOutput>CoursesModel.cs</LastGenOutput>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_OfflineLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <None Include="Scripts\jquery-3.6.3.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.3.js" />
+    <Content Include="Scripts\jquery-3.6.3.min.js" />
+    <Content Include="Scripts\jquery-3.6.3.slim.js" />
+    <Content Include="Scripts\jquery-3.6.3.slim.min.js" />
     <Content Include="Views\index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs">
+    <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Data\Admin.cs">
       <DependentUpon>CoursesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -128,30 +161,30 @@
     <Compile Include="Areas\Admin\Controllers\CourseController.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Instructor\InstructorAreaRegistration.cs" />
-    <Compile Include="Category.cs">
+    <Compile Include="Data\Category.cs">
       <DependentUpon>CoursesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Course.cs">
+    <Compile Include="Data\Course.cs">
       <DependentUpon>CoursesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CoursesModel.Context.cs">
+    <Compile Include="Data\CoursesModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CoursesModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="CoursesModel.cs">
+    <Compile Include="Data\CoursesModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CoursesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CoursesModel.Designer.cs">
+    <Compile Include="Data\CoursesModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CoursesModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Course_Lessons.cs">
+    <Compile Include="Data\Course_Lessons.cs">
       <DependentUpon>CoursesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -159,24 +192,27 @@
     </Compile>
     <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\CourseModel.cs" />
+    <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Trainee.cs">
+    <Compile Include="Data\Trainee.cs">
       <DependentUpon>CoursesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Trainee_Courses.cs">
+    <Compile Include="Data\Trainee_Courses.cs">
       <DependentUpon>CoursesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Trainer.cs">
+    <Compile Include="Data\Trainer.cs">
       <DependentUpon>CoursesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Services\AdminService.cs" />
+    <Compile Include="Services\CategoryService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <EntityDeploy Include="CoursesModel.edmx">
+    <EntityDeploy Include="Data\CoursesModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CoursesModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="CoursesModel.edmx.diagram">
+    <Content Include="Data\CoursesModel.edmx.diagram">
       <DependentUpon>CoursesModel.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
@@ -185,11 +221,35 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Default\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Course\Index.cshtml" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.6.3.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.3.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

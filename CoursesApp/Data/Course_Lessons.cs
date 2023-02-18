@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CoursesApp
+namespace CoursesApp.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Trainee_Courses
+    public partial class Course_Lessons
     {
-        public int Trainee_Id { get; set; }
+        public int ID { get; set; }
+        public string Title { get; set; }
         public int Course_Id { get; set; }
-        public System.DateTime Registeration_Date { get; set; }
+        public Nullable<int> Order_Number { get; set; }
     
         public virtual Course Course { get; set; }
-        public virtual Trainee Trainee { get; set; }
     }
 }

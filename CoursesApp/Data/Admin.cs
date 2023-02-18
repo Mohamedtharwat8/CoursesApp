@@ -7,18 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CoursesApp
+namespace CoursesApp.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Course_Lessons
+    public partial class Admin
     {
         public int ID { get; set; }
-        public string Title { get; set; }
-        public int Course_Id { get; set; }
-        public Nullable<int> Order_Number { get; set; }
-    
-        public virtual Course Course { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }
